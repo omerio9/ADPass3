@@ -1,5 +1,5 @@
 import java.util.Date;
-import java.util.concurrent.TimeUnit;
+
 
 public class Account {
     private String id;
@@ -8,6 +8,13 @@ public class Account {
     private double balance;
     private Date accessTime;
 
+
+
+    public Account(String id,String ownerName,double balance){
+        this.id=id;
+        this.ownerName=ownerName;
+        this.balance=balance;
+    }
     public String getAccType() {
         return accType;
     }
@@ -49,8 +56,24 @@ public class Account {
 
 
 
+   public void depositCash(double deposit){
+       System.out.println("Previous balance is R"+this.getBalance());
+        double new_Balance= getBalance()+deposit;
+        System.out.println("New deposit of R"+deposit);
+        this.setBalance(new_Balance);
+        System.out.println("Your new balance is now R"+this.getBalance());
 
 
 
 
-}
+       }
+
+
+    public void withdrawCash(double amount){
+
+    }
+   }//end Class
+
+
+
+
